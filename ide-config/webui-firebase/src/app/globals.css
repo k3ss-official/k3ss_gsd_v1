@@ -1,0 +1,131 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 29% 95%; /* Light Gray #F0F4F8 */
+    --foreground: 224 71% 4%; /* Dark Blue-Gray for text, ensures contrast */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 207 67% 62%; /* Subtle Blue #5DADE2 */
+    --primary-foreground: 210 40% 98%; /* Light color for text on primary */
+
+    --secondary: 210 40% 91%; /* Lighter gray for secondary elements */
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 210 40% 88%;
+    --muted-foreground: 210 30% 45%;
+
+    --accent: 267 38% 45%; /* Blue-Violet #6A479D */
+    --accent-foreground: 210 40% 98%; /* Light color for text on accent */
+
+    --destructive: 0 72% 51%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 80%;
+    --input: 210 20% 85%;
+    --ring: 207 67% 50%; /* A slightly darker shade of primary for rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors can remain as is or be updated if charts are used extensively */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar variables are not directly used but kept for consistency */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 224 71% 4%; /* Dark Blue-Gray */
+    --foreground: 210 40% 98%; /* Light Gray */
+
+    --card: 224 71% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 67% 62%; /* Subtle Blue #5DADE2 */
+    --primary-foreground: 224 71% 4%;
+
+    --secondary: 224 71% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 224 71% 12%;
+    --muted-foreground: 210 40% 60%;
+
+    --accent: 267 38% 55%; /* Lighter Blue-Violet for dark mode */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 71% 15%;
+    --input: 224 71% 15%;
+    --ring: 207 67% 70%;
+
+    /* Dark theme chart colors */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    /* Sidebar variables for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Halo Glow Effects for Buttons and Interactive Elements */
+  .btn-glow-primary {
+    @apply transition-all duration-300;
+    @apply hover:shadow-[0_0_15px_3px_hsl(var(--primary)/0.4)] focus:shadow-[0_0_20px_5px_hsl(var(--primary)/0.6)] active:shadow-[0_0_25px_8px_hsl(var(--primary)/0.7)];
+  }
+  .btn-glow-accent {
+    @apply transition-all duration-300;
+    @apply hover:shadow-[0_0_15px_3px_hsl(var(--accent)/0.4)] focus:shadow-[0_0_20px_5px_hsl(var(--accent)/0.6)] active:shadow-[0_0_25px_8px_hsl(var(--accent)/0.7)];
+  }
+  .card-glow-accent {
+     @apply transition-all duration-300;
+     @apply hover:shadow-[0_0_15px_5px_hsl(var(--accent)/0.2)] focus-within:shadow-[0_0_20px_7px_hsl(var(--accent)/0.3)];
+  }
+   .input-glow-accent {
+    @apply transition-shadow duration-300;
+    @apply focus:shadow-[0_0_10px_2px_hsl(var(--accent)/0.4)];
+  }
+}

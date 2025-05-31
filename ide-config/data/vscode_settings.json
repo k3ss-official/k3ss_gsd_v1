@@ -1,0 +1,9 @@
+{
+  "security.workspace.trust.enabled": "true,  \"security.workspace.trust.untrustedFiles\": \"newWindow\",  \"telemetry.enableTelemetry\": false,  \"editor.minimap.enabled\": true,  \"editor.wordWrap\": \"on\",  \"editor.bracketPairColorization.enabled\": true,  \"editor.formatOnSave\": true,  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",  \"eslint.validate\": [\"javascript\", \"javascriptreact\", \"typescript\", \"typescriptreact\"],  \"workbench.iconTheme\": \"material-icon-theme",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": "1000 (save 1s after edits stop",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": "{    \"source.fixAll\": true",
+  "source.organizeImports": "true}",
+  "editor.formatOnSaveMode": "file\"  // formats the whole file on saveThe above ensures code is consistently formatted and lint issues fixed every time you save . \u201cOrganize Imports\u201d removes unused imports automatically.\u2022"
+}
