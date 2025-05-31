@@ -1,0 +1,60 @@
+{
+  "name": "github-trending-repos",
+  "version": "0.1.0",
+  "description": "Be aware of new trending repos on GitHub",
+  "author": {
+    "name": "Vitaliy Potapov",
+    "email": "noginsk@rambler.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vitalets/github-trending-repos.git"
+  },
+  "scripts": {
+    "code": "eslint .",
+    "test-trends": "mocha test/specs/trends.test.js -r test/setup.js",
+    "test-issues": "mocha test/specs/issues.test.js -r test/setup.js",
+    "test-comments": "mocha test/specs/comments.test.js -r test/setup.js",
+    "test-translator": "mocha test/specs/translator.test.js -r test/setup.js",
+    "test-helpers": "mocha test/specs/*.test.js -r test/setup.js",
+    "test-daily": "TRENDING_LABEL=trending-daily TRENDING_LANG=javascript node scripts/update-issues",
+    "test-weekly": "TRENDING_LABEL=trending-weekly TRENDING_LANG=javascript node scripts/update-issues",
+    "test-clean": "TRENDING_LABEL=trending-daily TRENDING_LANG=javascript node scripts/clean-issues",
+    "test-all": "npm run test-helpers && npm run test-daily && npm run test-weekly && npm run test-clean"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run code"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.0.0-1",
+    "await-timeout": "^1.1.1",
+    "axios": "^0.20.0",
+    "axios-retry": "^3.1.8",
+    "cheerio": "^1.0.0-rc.2",
+    "emoji-regex": "^9.0.0",
+    "fs-extra": "^9.0.1",
+    "ip": "^1.1.5",
+    "ms": "^2.1.2",
+    "parse-link-header": "^1.0.1",
+    "promise-retry": "^2.0.1",
+    "ramda": "^0.27.1",
+    "throw-utils": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.8.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.3.0",
+    "markdown-magic": "^2.6.1",
+    "mocha": "^8.1.3",
+    "sinon": "^14.0.1"
+  },
+  "license": "MIT"
+}
